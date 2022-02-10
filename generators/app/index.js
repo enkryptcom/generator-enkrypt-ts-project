@@ -37,6 +37,25 @@ module.exports = class extends Generator {
 
   writing() {
     this.fs.copy(this.templatePath("src/"), this.destinationPath("src/"));
+    this.fs.copy(this.templatePath("tests/"), this.destinationPath("tests/"));
+
+    this.fs.copy(
+      this.templatePath("tests/example.test.ts"),
+      this.destinationPath("tests/example.test.ts")
+    );
+
+    this.fs.copy(
+      this.templatePath("src/types/"),
+      this.destinationPath("src/types/")
+    );
+    this.fs.copy(
+      this.templatePath("src/types/types.d.ts"),
+      this.destinationPath("src/types/types.d.ts")
+    );
+    this.fs.copy(
+      this.templatePath("src/index.ts"),
+      this.destinationPath("src/index.ts")
+    );
 
     this.fs.copy(
       this.templatePath(".editorconfig"),
@@ -46,10 +65,18 @@ module.exports = class extends Generator {
       this.templatePath(".eslintrc.json"),
       this.destinationPath(".eslintrc.json")
     );
+    this.fs.copy(
+      this.templatePath(".eslintignore"),
+      this.destinationPath(".eslintignore")
+    );
     this.fs.copy(this.templatePath(".nvmrc"), this.destinationPath(".nvmrc"));
     this.fs.copy(
-      this.templatePath("jest.config.js"),
-      this.destinationPath("jest.config.js")
+      this.templatePath("jest.config.ts"),
+      this.destinationPath("jest.config.ts")
+    );
+    this.fs.copy(
+      this.templatePath("jest.setup.ts"),
+      this.destinationPath("jest.setup.ts")
     );
     this.fs.copy(this.templatePath("LICENSE"), this.destinationPath("LICENSE"));
     this.fs.copy(
