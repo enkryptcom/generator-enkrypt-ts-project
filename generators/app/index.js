@@ -62,6 +62,10 @@ module.exports = class extends Generator {
       this.destinationPath(".editorconfig")
     );
     this.fs.copy(
+      this.templatePath(".gitignore"),
+      this.destinationPath(".gitignore")
+    );
+    this.fs.copy(
       this.templatePath(".eslintrc.json"),
       this.destinationPath(".eslintrc.json")
     );
