@@ -101,7 +101,8 @@ module.exports = class extends Generator {
       this.templatePath("README.md.tpl"),
       this.destinationPath("README.md"),
       {
-        name: this.props.name
+        name: this.props.name,
+        description: this.props.description
       }
     );
   }

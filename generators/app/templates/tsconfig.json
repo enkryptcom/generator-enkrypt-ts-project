@@ -14,7 +14,12 @@
     "esModuleInterop": true
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules/**/*", "_warmup/**/*", ".vscode/**/*"],
+  "exclude": [
+    "node_modules/**/*",
+    "_warmup/**/*",
+    ".vscode/**/*",
+    "tests/**/*"
+  ],
   "ts-node": {
     "require": ["tsconfig-paths/register"],
     "files": true
