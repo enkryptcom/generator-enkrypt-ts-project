@@ -1,4 +1,4 @@
-# generator-enkrypt-ts-project [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-enkrypt-ts-project [![NPM version][npm-image]][npm-url]
 > Typescript scaffholding for enkrypt projects
 
 ## Installation
