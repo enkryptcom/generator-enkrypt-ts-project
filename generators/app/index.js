@@ -26,7 +26,22 @@ module.exports = class extends Generator {
         type: "input",
         name: "author",
         message: "Your username",
-        default: "Anonymous"
+        default: "Anonymous",
+        store: true
+      },
+      {
+        type: "confirm",
+        name: "npm",
+        message: "would  you like to install npm?",
+        default: true,
+        store: true
+      },
+      {
+        type: "confirm",
+        name: "yarn",
+        message: "would  you like to install yarn?",
+        default: false,
+        store: true
       }
     ];
 
@@ -74,14 +89,6 @@ module.exports = class extends Generator {
       this.destinationPath(".eslintignore")
     );
     this.fs.copy(this.templatePath(".nvmrc"), this.destinationPath(".nvmrc"));
-    this.fs.copy(
-      this.templatePath("jest.config.ts"),
-      this.destinationPath("jest.config.ts")
-    );
-    this.fs.copy(
-      this.templatePath("jest.setup.ts"),
-      this.destinationPath("jest.setup.ts")
-    );
     this.fs.copy(this.templatePath("LICENSE"), this.destinationPath("LICENSE"));
     this.fs.copy(
       this.templatePath("tsconfig.json"),
@@ -114,7 +121,8 @@ module.exports = class extends Generator {
   install() {
     this.installDependencies({
       bower: false,
-      npm: true
+      npm: this.props.npm,
+      yarn: this.props.yarn
     });
   }
 };

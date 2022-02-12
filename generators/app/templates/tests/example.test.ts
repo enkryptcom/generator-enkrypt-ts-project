@@ -1,5 +1,6 @@
-describe("Calculator tests", () => {
-    test('adding 1 + 2 should return 3', () => {
-        expect((1 + 2)).toBe(3);
+import { expect } from 'chai';
+describe('Simple addition', () => { // the tests container
+    it('it should properly add', async () => {
+        expect(1 + 2).to.be.equals(3)
     });
-})
+});
