@@ -80,5 +80,6 @@
     "test": "jest"
   },
   "repository": "git@github.com:enkryptcom/generator-ts-project.git",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@3.2.2"
 }
