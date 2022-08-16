@@ -28,20 +28,6 @@ module.exports = class extends Generator {
         message: "Your username",
         default: "Anonymous",
         store: true
-      },
-      {
-        type: "confirm",
-        name: "npm",
-        message: "would  you like to install npm?",
-        default: true,
-        store: true
-      },
-      {
-        type: "confirm",
-        name: "yarn",
-        message: "would  you like to install yarn?",
-        default: false,
-        store: true
       }
     ];
 
@@ -77,7 +63,7 @@ module.exports = class extends Generator {
       this.destinationPath(".editorconfig")
     );
     this.fs.copy(
-      this.templatePath(".gitignore"),
+      this.templatePath("gitignore"),
       this.destinationPath(".gitignore")
     );
     this.fs.copy(
@@ -116,13 +102,5 @@ module.exports = class extends Generator {
         description: this.props.description
       }
     );
-  }
-
-  install() {
-    this.installDependencies({
-      bower: false,
-      npm: this.props.npm,
-      yarn: this.props.yarn
-    });
   }
 };
